@@ -40,3 +40,6 @@ yarn-error.log*
 
 # testing
 playwright/test-results
+
+# data files
+data_generation/.*
