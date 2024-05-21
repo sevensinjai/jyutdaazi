@@ -16,3 +16,6 @@ So I think i would be fun to make a small game to help me practice it. I have fo
 - add support to 多音字
 - enhance UI
 - adding animations
+
+# Remarks
+- This repo is cloned from my one of my template, so there is some irrelevant code, but i choose to ignore it (at the moment).
