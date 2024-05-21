@@ -13,7 +13,6 @@
     "dx:prisma-studio": "pnpm run prisma-studio",
     "dx": "run-p dx:* --print-label",
     "dev": "pnpm run dx:next",
-    "prebuild": "run-s generate migrate",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --cache --ext \".js,.ts,.tsx\" src",
@@ -22,8 +21,7 @@
     "migrate": "prisma migrate deploy",
     "test-unit": "vitest",
     "test-e2e": "playwright test",
-    "test-start": "run-s test-unit test-e2e",
-    "postinstall": "pnpm run generate"
+    "test-start": "run-s test-unit test-e2e"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
