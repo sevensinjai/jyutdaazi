@@ -2,10 +2,10 @@ import pycantonese
 import os
 
 if __name__ == "__main__":
-    result = []
     # read the files
     count = 1
     for file in os.listdir("./.data/input"):
+        result = []
         with open("./.data/input/{}".format(file), "r") as f:
             for line in f:
                 for word in line:
