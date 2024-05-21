@@ -69,14 +69,16 @@ const ParagraphCanvas: React.FC<Props> = ({ paragraph }) => {
                             );
                         })
                     }
-                    <Label className="text-yellow-500">
-                        {
-                            state.currentWordIndex + 1
-                        }/
-                        {
-                            paragraph.length
-                        }
-                    </Label>
+                    <div>
+                        <Label className="text-yellow-500">
+                            {
+                                state.currentWordIndex + 1
+                            }/
+                            {
+                                paragraph.length
+                            }
+                        </Label>
+                    </div>
                 </Card>
                 <SettingsSheet>
                     <Button variant={"outline"} className='bg-gray-700 text-gray-500'>
