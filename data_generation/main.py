@@ -4,12 +4,13 @@ import os
 if __name__ == "__main__":
     result = []
     # read the files
+    count = 1
     for file in os.listdir("./.data/input"):
         with open("./.data/input/{}".format(file), "r") as f:
             for line in f:
                 for word in line:
                     if word == "\n" or word == " ":
-                        result[-1]['suffix'] = word
+                        result[-1]["suffix"] = word
                         continue
                     if word == "":
                         continue
@@ -21,16 +22,12 @@ if __name__ == "__main__":
                     final = parsedPingying[0].nucleus + parsedPingying[0].coda
                     tone = parsedPingying[0].tone
                     result.append(
-                        {
-                            "initial": onset,
-                            "final": final,
-                            "word": word,
-                            "tone": tone
-                        }
+                        {"initial": onset, "final": final, "word": word, "tone": tone}
                     )
 
         # dump to json with chinese character
         import json
-        json_file_name = file.split(".")[0] + ".json"
-        with open("./.data/output/{}".format(json_file_name), "w") as f:
+
+        with open("./.data/output/{}.json".format(count), "w") as f:
             json.dump(result, f, ensure_ascii=False)
+        count += 1
