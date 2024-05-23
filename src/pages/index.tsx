@@ -4,6 +4,7 @@ import { StoreProvider } from "@/features/ParagraphCanvas/store"
 import EndingDialog from "@/features/ParagraphCanvas/EndingDialog"
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import { promises as fs } from 'fs';
+import path from 'path';
 
 
 export type ParagraphWord = {
@@ -17,7 +18,7 @@ export const getServerSideProps = (async () => {
   // random int from 1 - 1
   const randomInt = Math.floor(Math.random() * 5) + 1
   // import the paragraph from the json file
-  const file = await fs.readFile(process.cwd() + `/src/server/paragraphs/${randomInt}.json`, 'utf8');
+  const file = await fs.readFile(path.resolve(`src/server/paragraphs/${randomInt}.json`), 'utf8');
   const data = JSON.parse(file)
   const paragraph: ParagraphWord[] = data
   return { props: { paragraph } }
