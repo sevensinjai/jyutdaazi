@@ -14,9 +14,9 @@ export type ParagraphWord = {
 }
 export const getServerSideProps = (async () => {
   // random int from 1 - 1
-  const randomInt = Math.floor(Math.random() * 5) + 1
+  // const randomInt = Math.floor(Math.random() * 5) + 1
   // import the paragraph from the json file
-  const { default: data } = await import(`@/server/paragraphs/${randomInt}.json`, { assert: { type: 'json' } })
+  const { default: data } = await import(`@/server/paragraphs/1.json`, { assert: { type: 'json' } })
   const paragraph: ParagraphWord[] = data
   return { props: { paragraph } }
 }) satisfies GetServerSideProps<{ paragraph: ParagraphWord[] }>
